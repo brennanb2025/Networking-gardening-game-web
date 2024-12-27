@@ -1,0 +1,74 @@
+.grid-cell {
+    width: 70px; /* Adjust cell width */
+    height: 70px; /* Adjust cell height */
+    background-color: transparent; /* Transparent to keep a continuous grid color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Show border when a plant is being dragged over a cell */
+.grid-cell.drag-over {
+    border: 2px dashed #8b5a2b; /* Show border when a plant is being dragged over */
+    background-color: #d3f9d8; /* Change color to indicate a possible drop */
+}
+
+/* Change border to red when dragging over an occupied cell */
+.grid-cell.occupied.drag-over {
+    border: 2px solid rgb(156, 59, 59); /* Change border to red for occupied cells */
+}
+
+/* Hover effect for grid cells */
+.grid-cell:hover {
+    border: 2px dashed #8b5a2b; /* Show border on hover */
+    background-color: rgba(211, 249, 216, 0.5); /* Light background when hovered */
+}
+
+.grid-cell.occupied {
+    background-color: transparent; /* Keep the same background to blend in */
+}
+
+/* Scale plant when occupied */
+.grid-cell.occupied .plant {
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.grid-cell.occupied .plant {
+    animation: grow 0.5s ease-in-out forwards;
+}
+
+
+.plant-image {
+    width: 80%; /* Adjust size as needed */
+    height: auto;
+    object-fit: contain;
+}
+
+.time-diff-circle {
+    position: absolute; /* Ensure it is positioned relative to the .grid-cell */
+    top: 5px; /* Position at the top */
+    right: 5px; /* Position at the right */
+    width: 20px; /* Circle width */
+    height: 20px; /* Circle height */
+    border-radius: 50%; /* Make it a circle */
+    background-color: rgba(255, 255, 255, 0.8); /* Background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem; /* Adjust font size */
+    color: #333; /* Text color */
+    border: 1px solid #ccc; /* Optional: border */
+    z-index: 1; /* Ensure it's on top */
+}

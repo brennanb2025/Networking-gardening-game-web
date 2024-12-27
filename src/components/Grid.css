@@ -1,0 +1,26 @@
+.grid-container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f0f0f0; /* Optional: background for the page */
+    border-radius: 15px; /* Optional: add a border radius */
+    overflow: hidden; /* Prevent the whole page from scrolling */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(20, 70px); /* 20 columns */
+    grid-template-rows: repeat(20, 70px); /* 20 rows */
+    gap: 0; /* Remove gap to make it a continuous box */
+    background-color: #84ea84; /* Green background for the grid */
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+    /* Fixed dimensions for the grid box */
+    width: 85%; /* Adjust this as needed */
+    height: 75%; /* Adjust this as needed */
+    overflow: auto; /* Enable scrolling within the grid */
+}

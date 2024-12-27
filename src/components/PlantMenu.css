@@ -1,0 +1,13 @@
+.plant-menu {
+  position: absolute; /* Take the menu out of the normal document flow */
+  top: 20px; /* Distance from the top of the viewport or parent container */
+  left: 50%; /* Horizontally center the menu */
+  transform: translateX(-50%); /* Adjust for the element's own width */
+  display: flex; /* Ensure the items are displayed side-by-side */
+  gap: 10px; /* Add spacing between plant icons */
+  padding: 20px;
+  background-color: #d2f8d2;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it is displayed above other elements */
+}
